@@ -24,6 +24,7 @@ def generate_product(product_id):
 
 # Generate 1100 product entries
 products = [generate_product(pid) for pid in range(1, 1101)]
+products = sorted(products, key=lambda x: x['popularity_score'], reverse=True)
 products_df = pd.DataFrame(products)
 
 # Show a sample of the data
